@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: arial;
+}
+
+body {
+    min-height: 100vh;
+    background: #365fa1;
+    direction: rtl;
+}
+/* the basic blue button */
+.navigation {
+    position: fixed;
+    inset: 23px;
+    background: #287bff;
+    width: 78px;
+    border-radius: 10px solid #287bff;
+    border-radius: 50px;
+    box-shadow: 15px 15px 25px rgba(0, 0, 0, 0.05);
+    transition: 0.8s;
+
+}
+
+
+.toggle {
+    position: absolute;
+    bottom: 15px;
+    left: 14px;
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toggle::before {
+    content: '';
+    position: absolute;
+    width: 26px;
+    height: 3px;
+    border-radius: 3px;
+    background: #365fa1;
+    transform: translateY(-5px);
+    transition: 0.7s;
+}
+
+.toggle::after {
+    content: '';
+    position: absolute;
+    width: 26px;
+    height: 3px;
+    border-radius: 3px;
+    background: #365fa1;
+    transform: translateY(5px);
+    transition: 0.7s;
+}
+
+.navigation.active {
+    width: 300px;
+    border-radius: 20px;
+
+}
+
+.navigation.active .toggle::before {
+    transform: translateY(0px) rotate(-405deg);
+
+}
+
+.navigation.active .toggle::after {
+    transform: translateY(0px) rotate(225deg);
+
+}
+
+.navigation ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 88%;
+    overflow:hidden ;
+}
+
+.navigation ul li {
+    position: relative;
+    list-style: none;
+    width: 100%;
+    /*background: #fff;*/
+    border-radius: 0px 30px 30px 0px;
+}
+
+.navigation ul li:hover {
+    background: #09253a;
+}
+.navigation ul li :nth-child(1){
+    top: 20px;
+    margin-bottom: 40px;
+    background: none;
+}
+.navigation ul li a{
+    position:relative;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: #fff;
+}
+.navigation ul li :hover :not(:first-child) a{
+    color: #222;
+    display: flex;
+}
+/*  the problem is about here*/
+.navigation ul li a .icon {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: first baseline;
+    min-width: 60px;
+    height: 60px;    
+}
+.navigation ul li a .icon ion-icon {
+    font-size: 1.75em;
+}
+.navigation ul li a .title{
+    position: relative;
+    display: block;
+    padding: 0px 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+
+}
+
+/*.navigation ul li:not(:first-child):hover ::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 0px;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-radius: 0 0 0 20px;
+    box-shadow: -7.5px 7.5px 0 7.5px #09253a;
+}
+
+.navigation ul li:not(:first-child):hover ::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 0px;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-radius: 20px 0 0 0 ;
+    box-shadow: -7.5px -7.5px 0 7.5px #09253a;
+}*/
